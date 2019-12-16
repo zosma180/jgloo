@@ -1,0 +1,23 @@
+#!/usr/bin/env node
+
+'use strict';
+const { execSync } = require('child_process');
+
+// Check version type
+const params = process.argv.slice(2);
+let type = params[0] || null;
+
+if (!type) {
+  console.log('No version type specified: "patch" used');
+  type = 'patch';
+}
+if (type !== 'major' && type !== 'minor' && type !== 'patch' ) {
+  console.error('ERROR: Invalid version type. Please provide a value (major | minor | patch)');
+  process.exit(1);
+}
+
+// Update version
+execSync(`npm version --no-git-tag-version ${type}`, { stdio: 'inherit' });
+
+// Publish
+execSync('npm publish', { stdio: 'inherit' });

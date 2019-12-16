@@ -1,0 +1,13 @@
+#!/usr/bin/env node
+
+'use strict';
+const path = require('path');
+const { execSync } = require('child_process');
+
+const params = process.argv.slice(2);
+const root = path.join(process.env.PWD, params[0] || 'mock');
+const port = params[1] || 3000;
+const nodemon = `${__dirname}/node_modules/.bin/nodemon`;
+const server = `${__dirname}/server.js`;
+
+execSync(`${nodemon} --watch ${root} ${server} ${root} ${port}`, { stdio: 'inherit' });

@@ -1,0 +1,33 @@
+{
+  "name": "jgloo",
+  "version": "0.0.1",
+  "description": "The coldest mock server.",
+  "homepage": "https://github.com/zosma180/jgloo",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zosma180/jgloo.git"
+  },
+  "main": "jgloo.js",
+  "scripts": {
+    "deploy": "./deploy"
+  },
+  "bin": {
+    "jgloo": "./cli"
+  },
+  "keywords": [
+    "jgloo",
+    "mock",
+    "local",
+    "server",
+    "http",
+    "rest"
+  ],
+  "author": "zosma",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.2"
+  }
+}
