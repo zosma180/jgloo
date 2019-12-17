@@ -39,6 +39,7 @@ Now you are ready to create your first API.
 * [Create a custom ReST API](#create-a-custom-rest-api)
 * [Create a middleware](#create-a-middleware)
 * [Where data are stored](#where-data-are-stored)
+* [Run the server](#run-the-server)
 
 ---
 
@@ -56,7 +57,8 @@ module.exports = {
 };
 ```
 
-With this code the GET route http://localhost:3000/hello will be created and returns a JSON with data "{ message: 'Hello World!' }".
+With this code the GET route http://localhost:3000/hello will be created and returns a JSON with data "{ message: 'Hello World!' }".  
+You are ready to [run the server](#run-the-server) now.
 
 ---
 
@@ -140,3 +142,21 @@ module.exports = {
   name: 'user'
 };
 ```
+
+---
+
+### Run the server
+
+To run the server execute the following command in your project root:
+
+```shell
+jgloo [ROOT] [PORT]
+```
+For example:
+
+```shell
+jgloo mock 3000
+```
+
+* **ROOT**: the folder where your mocks are placed. It's optional, by default is the folder "mock".
+* **PORT**: the port of running server. It's optional, by default is "3000".
