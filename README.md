@@ -10,7 +10,7 @@
 ---
 
 ## Description
-**jgloo** is a local HTTP server useful to mock your backend API and speed the client development.  
+**jgloo** is a local HTTP server useful to mock your backend API and speed up the client development.  
 This project is based on the Node framework Express. The highlights are:
 
 * Create a ReST API with two rows of code
