@@ -32,7 +32,6 @@ const search = (/^<a name="(\d.\d.\d)"><\/a>\n/g).exec(changelog);
 const changeVersion = search && search.length >= 2 ? search[1] : null;
 
 if (changeVersion !== version) {
-  reset();
   error('CHANGELOG not updated. Add the new version before deploy it.');
 }
 
@@ -40,7 +39,6 @@ if (changeVersion !== version) {
 try {
   execSync('npm publish', { stdio: 'inherit' });
 } catch (e) {
-  reset();
   error('Publishing failed, operation aborted.');
 }
 
@@ -53,12 +51,9 @@ git += 'git push && ';
 git += 'git push --tags';
 execSync(git, { stdio: 'inherit' });
 
-// Functions
+// Error function
 function error(message) {
+  execSync('git checkout HEAD -- package.json package-lock.json');
   console.error('\x1b[41m%s\x1b[0m', message, '\n');
   process.exit(1);
-}
-
-function reset() {
-  execSync('git checkout HEAD -- package.json package-lock.json');
 }
