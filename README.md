@@ -155,13 +155,13 @@ With this code, the JSON file will be stored as "user.json".
 To run the server execute the following command in your project root:
 
 ```shell
-jgloo [ROOT] [PORT]
+jgloo -f [FOLDER] -p [PORT]
 ```
 For example:
 
 ```shell
-jgloo mock 3000
+jgloo -f mock -p 3000
 ```
 
-* **ROOT**: the folder where your mocks are placed. It's optional, by default it's the folder "mock".
-* **PORT**: the port of running server. It's optional, by default it's "3000".
+* "**-f**" or "**--folder**": the folder where your mocks are placed. It's optional, by default it's the folder "mock".
+* "**-p**" or "**--port**": the port of running server. It's optional, by default it's "3000".

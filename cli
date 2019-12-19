@@ -3,13 +3,14 @@
 'use strict';
 const path = require('path');
 const { exec } = require('child_process');
+const minimist = require('minimist');
 
-const params = process.argv.slice(2);
-const root = path.join(process.env.PWD, params[0] || 'mock');
-const port = params[1] || 3000;
+const params = minimist(process.argv.slice(2));
+const folder = path.join(process.env.PWD, params.f || params.folder || 'mock');
+const port = params.p || params.port || 3000;
 const server = `${__dirname}/server.js`;
 
-const child = exec(`nodemon --watch ${root} ${server} ${root} ${port}`);
+const child = exec(`nodemon --watch ${folder} ${server} ${folder} ${port}`);
 
 child.stdout.on('data', data => console.log(String(data)));
 child.stderr.on('data', data => console.error(String(data)));
