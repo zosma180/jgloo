@@ -1,3 +1,12 @@
+<a name="1.1.1"></a>
+## [1.1.1](https://github.com/zosma180/jgloo/compare/1.1.0...1.1.1) (2020-01-17)
+
+### Improvements
+
+* Added the json DB to nodemon watch exclusion
+
+---
+
 <a name="1.1.0"></a>
 ## [1.1.0](https://github.com/zosma180/jgloo/compare/1.0.3...1.1.0) (2019-12-19)
 
