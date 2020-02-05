@@ -9,7 +9,7 @@
   },
   "main": "jgloo.js",
   "scripts": {
-    "deploy": "./deploy"
+    "deploy": "npm-deploy"
   },
   "bin": {
     "jgloo": "./cli"
