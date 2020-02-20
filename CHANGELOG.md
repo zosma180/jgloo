@@ -1,3 +1,12 @@
+<a name="1.2.0"></a>
+## [1.2.0](https://github.com/zosma180/jgloo/compare/1.1.1...1.2.0) (2020-02-20)
+
+### Features
+
+* Added the static folder feature
+
+---
+
 <a name="1.1.1"></a>
 ## [1.1.1](https://github.com/zosma180/jgloo/compare/1.1.0...1.1.1) (2020-01-17)
 

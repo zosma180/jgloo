@@ -31,6 +31,12 @@ if (existsSync(middlewarePath)) {
     });
 }
 
+// Add the static folder
+const staticPath = `${root}/static`;
+if (existsSync(staticPath)) {
+  app.use('/static', express.static(staticPath));
+}
+
 // Add API
 const apiPath = `${root}/api`;
 

@@ -18,6 +18,7 @@ This project is based on the Node framework Express. The highlights are:
 * Create custom middleware easily (i.e. auth check)
 * Store data in accessible JSON files
 * Reload the live changes of your mocks automatically (thanks to nodemon package)
+* Expose a dedicated folder for the static files (images, assets etc...)
 
 ---
 
@@ -39,6 +40,7 @@ Now you are ready to [create your first API](#create-a-simple-api).
 * [Create a custom ReST API](#create-a-custom-rest-api)
 * [Create a middleware](#create-a-middleware)
 * [Where data are stored](#where-data-are-stored)
+* [Expose the static files](#expose-the-static-files)
 * [Run the server](#run-the-server)
 
 ---
@@ -147,6 +149,13 @@ module.exports = {
 ```
 
 With this code, the JSON file will be stored as "user.json".
+
+---
+
+### Expose the static files
+
+To expose any static files you have to create the subfolder "static" in your chosen root path (i.e. "mock/static") and put all the resources inside it.  
+The static content is reachable by "http://localhost:3000/static/...". That's it.
 
 ---
 
