@@ -1,3 +1,12 @@
+<a name="1.2.1"></a>
+## [1.2.1](https://github.com/zosma180/jgloo/compare/1.2.0...1.2.1) (2020-03-18)
+
+### Improvements
+
+* Bumpeded minimist from 1.2.0 to 1.2.2 for a security patch
+
+---
+
 <a name="1.2.0"></a>
 ## [1.2.0](https://github.com/zosma180/jgloo/compare/1.1.1...1.2.0) (2020-02-20)
 
