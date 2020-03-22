@@ -1,3 +1,12 @@
+<a name="1.2.2"></a>
+## [1.2.2](https://github.com/zosma180/jgloo/compare/1.2.1...1.2.2) (2020-03-22)
+
+### Improvements
+
+* Rebuilded the project after the security patch of the dependencies
+
+---
+
 <a name="1.2.1"></a>
 ## [1.2.1](https://github.com/zosma180/jgloo/compare/1.2.0...1.2.1) (2020-03-18)
 
