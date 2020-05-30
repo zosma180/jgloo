@@ -1,3 +1,12 @@
+<a name="1.2.3"></a>
+## [1.2.3](https://github.com/zosma180/jgloo/compare/1.2.2...1.2.3) (2020-05-30)
+
+### Improvements
+
+* Updated the README with the right installation command
+
+---
+
 <a name="1.2.2"></a>
 ## [1.2.2](https://github.com/zosma180/jgloo/compare/1.2.1...1.2.2) (2020-03-22)
 

@@ -24,7 +24,7 @@ This project is based on the Node framework Express. The highlights are:
 
 ## Installation
 ```bash
-npm i jgloo --save-dev
+npm i -g jgloo
 ```
 
 After the installation create a folder "mock" in your project root (you can use another path and folder name if you want).  
