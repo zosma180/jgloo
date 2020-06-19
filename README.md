@@ -10,19 +10,22 @@
 ---
 
 ## Description
+
 **jgloo** is a local HTTP server useful to mock your backend API and speed up the client development.  
 This project is based on the Node framework Express. The highlights are:
 
-* Create a ReST API with two rows of code
-* Create custom API easily
-* Create custom middleware easily (i.e. auth check)
-* Store data in accessible JSON files
-* Reload the live changes of your mocks automatically (thanks to nodemon package)
-* Expose a dedicated folder for the static files (images, assets etc...)
+- Create a ReST API with two rows of code
+- Create custom API easily
+- Create custom middleware easily (i.e. auth check)
+- Store data in accessible JSON files
+- Reload the live changes of your mocks automatically (thanks to nodemon package)
+- Expose a dedicated folder for the static files (images, assets etc...)
+- Support to multipart/form-data requests
 
 ---
 
 ## Installation
+
 ```bash
 npm i -g jgloo
 ```
@@ -35,13 +38,14 @@ Now you are ready to [create your first API](#create-a-simple-api).
 
 ## Guide
 
-* [Create a simple API](#create-a-simple-api)
-* [Create a default ReST API](#create-a-default-rest-api)
-* [Create a custom ReST API](#create-a-custom-rest-api)
-* [Create a middleware](#create-a-middleware)
-* [Where data are stored](#where-data-are-stored)
-* [Expose the static files](#expose-the-static-files)
-* [Run the server](#run-the-server)
+- [Create a simple API](#create-a-simple-api)
+- [Create a default ReST API](#create-a-default-rest-api)
+- [Create a custom ReST API](#create-a-custom-rest-api)
+- [Create a middleware](#create-a-middleware)
+- [Where data are stored](#where-data-are-stored)
+- [Expose the static files](#expose-the-static-files)
+- [Handle requests with file uploads](#handle-requests-with-file-uploads)
+- [Run the server](#run-the-server)
 
 ---
 
@@ -55,7 +59,7 @@ module.exports = {
   method: 'get',
   callback: (req, res) => {
     res.json({ message: 'Hello World!' });
-  }
+  },
 };
 ```
 
@@ -71,17 +75,18 @@ To setup a ReST API, you have to create a new file in the "api" folder with the 
 ```typescript
 module.exports = {
   path: '/user',
-  method: 'resource'
+  method: 'resource',
 };
 ```
 
-With these few rows of code will be created 6 routes:  
-* GET /user : return the list of users;
-* GET /user/:id : return the specific user;
-* POST /user : allow to store the full request body as new user and return it as response;
-* PUT /user/:id : allow to replace an existent user with the full request body and return it as response;
-* PATCH /user/:id : allow to merge an existent user data with the request body values and return it as response;
-* DELETE /user/:id : allow to delete an existent user and return the deleted id.
+With these few rows of code will be created 6 routes:
+
+- GET /user : return the list of users;
+- GET /user/:id : return the specific user;
+- POST /user : allow to store the full request body as new user and return it as response;
+- PUT /user/:id : allow to replace an existent user with the full request body and return it as response;
+- PATCH /user/:id : allow to merge an existent user data with the request body values and return it as response;
+- DELETE /user/:id : allow to delete an existent user and return the deleted id.
 
 ---
 
@@ -112,9 +117,9 @@ module.exports = {
 
     // Return the model as JSON
     res.json(user);
-  }
+  },
 };
-``` 
+```
 
 ---
 
@@ -144,7 +149,7 @@ If you want to specify the file name of the resources, you can set it as the "na
 module.exports = {
   path: '/my/long/path',
   method: 'resource',
-  name: 'user'
+  name: 'user',
 };
 ```
 
@@ -159,6 +164,14 @@ The static content is reachable by "http://localhost:3000/static/...". That's it
 
 ---
 
+### Handle requests with file uploads
+
+The multipart/form-data requests are supported by default. The `req.body` will be filled with the right data.  
+The data of the uploaded files are placed in the `req.files` property and the files are saved in the `static` folder with a temporary name.  
+It's recommended to add the `static` folder in the `.gitignore` file.
+
+---
+
 ### Run the server
 
 To run the server execute the following command in your project root:
@@ -166,11 +179,12 @@ To run the server execute the following command in your project root:
 ```shell
 jgloo -f [FOLDER] -p [PORT]
 ```
+
 For example:
 
 ```shell
 jgloo -f mock -p 3000
 ```
 
-* "**-f**" or "**--folder**": the folder where your mocks are placed. It's optional, by default it's the folder "mock".
-* "**-p**" or "**--port**": the port of running server. It's optional, by default it's "3000".
+- "**-f**" or "**--folder**": the folder where your mocks are placed. It's optional, by default it's the folder "mock".
+- "**-p**" or "**--port**": the port of running server. It's optional, by default it's "3000".
