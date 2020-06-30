@@ -1,3 +1,13 @@
+<a name="1.4.0"></a>
+
+## [1.4.0](https://github.com/zosma180/jgloo/compare/1.3.0...1.4.0) (2020-06-30)
+
+### Features
+
+- Added the optional parameter to customize the static url
+
+---
+
 <a name="1.3.0"></a>
 
 ## [1.3.0](https://github.com/zosma180/jgloo/compare/1.2.3...1.3.0) (2020-06-19)

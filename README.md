@@ -177,14 +177,21 @@ It's recommended to add the `static` folder in the `.gitignore` file.
 To run the server execute the following command in your project root:
 
 ```shell
-jgloo -f [FOLDER] -p [PORT]
+jgloo
+```
+
+The full optional parameters are:
+
+```shell
+jgloo -f [FOLDER] -p [PORT] -s [STATIC_URL]
 ```
 
 For example:
 
 ```shell
-jgloo -f mock -p 3000
+jgloo -f 'mock' -p 3000 -s 'static'
 ```
 
 - "**-f**" or "**--folder**": the folder where your mocks are placed. It's optional, by default it's the folder "mock".
 - "**-p**" or "**--port**": the port of running server. It's optional, by default it's "3000".
+- "**-s**" or "**--static**": the url prefix of the static resources. It's optional, by default it's "static".

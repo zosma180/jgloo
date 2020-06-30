@@ -10,6 +10,7 @@ const app = express();
 const params = process.argv.slice(2);
 const root = params[0];
 const port = params[1];
+const staticUrl = params[2];
 
 const apiPath = `${root}/api`;
 const middlewarePath = `${root}/middlewares`;
@@ -37,7 +38,7 @@ if (existsSync(middlewarePath)) {
 
 // Add the static folder
 if (existsSync(staticPath)) {
-  app.use('/static', express.static(staticPath));
+  app.use(`/${staticUrl}`, express.static(staticPath));
 }
 
 // Add API
