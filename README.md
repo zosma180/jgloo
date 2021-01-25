@@ -88,6 +88,17 @@ With these few rows of code will be created 6 routes:
 - PATCH /user/:id : allow to merge an existent user data with the request body values and return it as response;
 - DELETE /user/:id : allow to delete an existent user and return the deleted id.
 
+If you want to skip any of the previous routes, you can add the "not" property:
+
+```typescript
+module.exports = {
+  path: '/user',
+  method: 'resource',
+  not: ['LIST']
+};
+```
+The available values of the "not" property are ['LIST', 'READ', 'CREATE', 'UPDATE', 'PATCH', 'DELETE']
+
 ---
 
 ### Create a custom ReST API

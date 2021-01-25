@@ -1,3 +1,13 @@
+<a name="1.5.0"></a>
+
+## [1.5.0](https://github.com/zosma180/jgloo/compare/1.4.0...1.5.0) (2021-01-25)
+
+### Features
+
+- Added the optional "not" property to the default ReST API configuration
+
+---
+
 <a name="1.4.0"></a>
 
 ## [1.4.0](https://github.com/zosma180/jgloo/compare/1.3.0...1.4.0) (2020-06-30)
