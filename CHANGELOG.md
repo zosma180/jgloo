@@ -1,3 +1,13 @@
+<a name="1.5.1"></a>
+
+## [1.5.1](https://github.com/zosma180/jgloo/compare/1.5.0...1.5.1) (2021-02-17)
+
+### Bug Fixes
+
+- Fixed the folder path for Windows environment
+
+---
+
 <a name="1.5.0"></a>
 
 ## [1.5.0](https://github.com/zosma180/jgloo/compare/1.4.0...1.5.0) (2021-01-25)

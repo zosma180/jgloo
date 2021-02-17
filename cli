@@ -6,7 +6,7 @@ const { exec } = require('child_process');
 const minimist = require('minimist');
 
 const params = minimist(process.argv.slice(2));
-const folder = path.join(process.env.PWD, params.f || params.folder || 'mock');
+const folder = path.join(process.cwd(), params.f || params.folder || 'mock');
 const port = params.p || params.port || 3000;
 const staticUrl = params.s || params.static || 'static';
 const server = `${__dirname}/server.js`;
