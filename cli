@@ -12,7 +12,7 @@ const staticUrl = params.s || params.static || 'static';
 const server = `${__dirname}/server.js`;
 
 const child = exec(
-  `nodemon --watch ${folder} --ignore "db/*.json" "${server}" "${folder}" "${port}" "${staticUrl}"`
+  `nodemon --watch "${folder}" --ignore "db/*.json" "${server}" "${folder}" "${port}" "${staticUrl}"`
 );
 
 child.stdout.on('data', (data) => console.log(String(data)));
