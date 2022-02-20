@@ -20,5 +20,11 @@ module.exports = {
     if (!existsSync(db)) { mkdirSync(db); }
     const path = `${db}/${name}.json`;
     writeFileSync(path, JSON.stringify(value), 'utf8');
-  }
+  },
+
+  getDelayMiddleware: (delay) => {
+    return (_, __, next) => {
+      setTimeout(() => next(), delay * 1000);
+    };
+  },
 }

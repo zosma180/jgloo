@@ -1,3 +1,13 @@
+<a name="1.6.0"></a>
+
+## [1.6.0](https://github.com/zosma180/jgloo/compare/1.5.2...1.6.0) (2022-02-20)
+
+### Features
+
+- Added the optional "delay" property to the configuration
+
+---
+
 <a name="1.5.2"></a>
 
 ## [1.5.2](https://github.com/zosma180/jgloo/compare/1.5.1...1.5.2) (2021-02-21)

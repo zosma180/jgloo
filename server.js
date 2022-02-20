@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const multer = require('multer');
 
 const { configureResource } = require(path.join(__dirname, 'rest'));
+const { getDelayMiddleware } = require(path.join(__dirname, 'jgloo'));
 const app = express();
 const params = process.argv.slice(2);
 const root = params[0];
@@ -56,6 +57,11 @@ if (!api.length) {
 
 api.forEach((file) => {
   const config = require(path.join(apiPath, file));
+
+  // Add the API delay, if it is provided
+  if (config.delay) {
+    app.use(config.path, getDelayMiddleware(config.delay));
+  }
 
   if (config.method === 'resource') {
     // ReST resource

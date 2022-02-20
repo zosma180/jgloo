@@ -2,7 +2,7 @@
   "name": "jgloo",
   "version": "1.5.2",
   "description": "The coldest mock server.",
-  "homepage": "https://github.com/zosma180/jgloo",
+  "homepage": "https://github.com/zosma180/jgloo#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/zosma180/jgloo.git"
