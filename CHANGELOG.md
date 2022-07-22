@@ -1,3 +1,13 @@
+<a name="1.6.1"></a>
+
+## [1.6.1](https://github.com/zosma180/jgloo/compare/1.6.0...1.6.1) (2022-07-22)
+
+### Bug Fixes
+
+- Updated the package-lock to fix the security issues
+
+---
+
 <a name="1.6.0"></a>
 
 ## [1.6.0](https://github.com/zosma180/jgloo/compare/1.5.2...1.6.0) (2022-02-20)
