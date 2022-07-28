@@ -1,5 +1,5 @@
 const path = require('path');
-const { existsSync, readdirSync } = require('fs');
+const { existsSync, readdirSync, lstatSync } = require('fs');
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
@@ -22,6 +22,22 @@ if (!existsSync(root)) {
   process.exit(2);
 }
 
+// Utility to deep load files
+const walk = (entry, level = 1) => {
+  let list = [];
+  const items = readdirSync(entry);
+
+  items.forEach(item => {
+    const subEntry = path.join(entry, item);
+
+    lstatSync(subEntry).isDirectory() && level < 10
+      ? list = list.concat(walk(subEntry, level + 1))
+      : list.push(subEntry);
+  });
+
+  return list;
+};
+
 // Config
 app.use(cors());
 app.use(bodyParser.json());
@@ -29,10 +45,10 @@ app.use(multer({ dest: staticPath }).any());
 
 // Add middlewares
 if (existsSync(middlewarePath)) {
-  readdirSync(middlewarePath)
-    .filter((file) => file.endsWith('.js'))
-    .forEach((file) => {
-      const middleware = require(path.join(middlewarePath, file));
+  walk(middlewarePath)
+    .filter(file => file.endsWith('.js'))
+    .forEach(file => {
+      const middleware = require(file);
       app.use(middleware);
     });
 }
@@ -48,7 +64,7 @@ if (!existsSync(apiPath)) {
   process.exit(2);
 }
 
-const api = readdirSync(apiPath).filter((file) => file.endsWith('.js'));
+const api = walk(apiPath).filter(file => file.endsWith('.js') );
 
 if (!api.length) {
   console.error(`No API file defined. Create one.`);
@@ -56,7 +72,7 @@ if (!api.length) {
 }
 
 api.forEach((file) => {
-  const config = require(path.join(apiPath, file));
+  const config = require(file);
 
   // Add the API delay, if it is provided
   if (config.delay) {

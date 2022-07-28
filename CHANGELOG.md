@@ -1,3 +1,13 @@
+<a name="1.7.0"></a>
+
+## [1.7.0](https://github.com/zosma180/jgloo/compare/1.6.1...1.7.0) (2022-07-28)
+
+### Features
+
+- Added the support for the recursive folder loading (api and middlewares)
+
+---
+
 <a name="1.6.1"></a>
 
 ## [1.6.1](https://github.com/zosma180/jgloo/compare/1.6.0...1.6.1) (2022-07-22)
