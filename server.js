@@ -64,16 +64,17 @@ if (!existsSync(apiPath)) {
   process.exit(2);
 }
 
-const api = walk(apiPath).filter(file => file.endsWith('.js') );
+const api = walk(apiPath)
+  .filter(file => file.endsWith('.js'))
+  .map(file => require(file))
+  .sort((a, b) => (b.priority || 0) - (a.priority || 0));
 
 if (!api.length) {
   console.error(`No API file defined. Create one.`);
   process.exit(2);
 }
 
-api.forEach((file) => {
-  const config = require(file);
-
+api.forEach(config => {
   // Add the API delay, if it is provided
   if (config.delay) {
     app.use(config.path, getDelayMiddleware(config.delay));
@@ -90,3 +91,4 @@ api.forEach((file) => {
 
 const message = `jgloo builded on the ice shelf "${root}" and the port ${port}.`;
 app.listen(port, () => console.log('\x1b[36m', message));
+

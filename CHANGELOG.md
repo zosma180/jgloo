@@ -1,3 +1,13 @@
+<a name="1.8.0"></a>
+
+## [1.8.0](https://github.com/zosma180/jgloo/compare/1.7.0...1.8.0) (2022-07-29)
+
+### Features
+
+- Added the optional "priority" property to the configuration
+
+---
+
 <a name="1.7.0"></a>
 
 ## [1.7.0](https://github.com/zosma180/jgloo/compare/1.6.1...1.7.0) (2022-07-28)

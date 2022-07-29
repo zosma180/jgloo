@@ -46,6 +46,7 @@ Now you are ready to [create your first API](#create-a-simple-api).
 - [Expose the static files](#expose-the-static-files)
 - [Handle requests with file uploads](#handle-requests-with-file-uploads)
 - [Simulate network delay](#simulate-network-delay)
+- [Manage path conflicts](#manage-path-conflicts)
 - [Run the server](#run-the-server)
 
 ---
@@ -194,6 +195,25 @@ module.exports = {
   delay: 3 // Seconds
 };
 ```
+
+---
+
+### Manage path conflicts
+
+If you have a scenario where two or more paths have conflicting values, e.g.:
+- /my-path/:id
+- /my-path/my-sub-path
+
+you can add the `priority` property to your API configuration:
+
+```javascript
+module.exports = {
+  ...
+  priority: 2
+};
+```
+
+The default value is 0. The api with the higher value will be used.
 
 ---
 
