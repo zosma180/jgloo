@@ -2,14 +2,14 @@ const path = require('path');
 const { getResource, setResource } = require(path.join(__dirname, 'jgloo'));
 
 module.exports = {
-  configureResource: (app, config) => {
+  configureResource: (app, config, middleware) => {
     const fallback = config.path.split('/').filter(Boolean).join('-');
     const resourceName = config.name || fallback;
     const skips = config.not || [];
 
     // List
     if (skips.includes('LIST') === false) {
-      app.get(config.path, (req, res) => {
+      app.get(config.path, middleware, (req, res) => {
         const resource = getResource(resourceName) || [];
         res.json(resource);
       });
@@ -17,7 +17,7 @@ module.exports = {
 
     // Read
     if (skips.includes('READ') === false) {
-      app.get(`${config.path}/:id`, (req, res) => {
+      app.get(`${config.path}/:id`, middleware, (req, res) => {
         const id = Number(req.params.id);
 
         const resource = getResource(resourceName) || [];
@@ -30,7 +30,7 @@ module.exports = {
 
     // Create
     if (skips.includes('CREATE') === false) {
-      app.post(config.path, (req, res) => {
+      app.post(config.path, middleware, (req, res) => {
         const resource = getResource(resourceName) || [];
         const model = req.body;
 
@@ -44,7 +44,7 @@ module.exports = {
 
     // Update
     if (skips.includes('UPDATE') === false) {
-      app.put(`${config.path}/:id`, (req, res) => {
+      app.put(`${config.path}/:id`, middleware, (req, res) => {
         const id = Number(req.params.id);
 
         const resource = getResource(resourceName) || [];
@@ -61,7 +61,7 @@ module.exports = {
 
     // Patch
     if (skips.includes('PATCH') === false) {
-      app.patch(`${config.path}/:id`, (req, res) => {
+      app.patch(`${config.path}/:id`, middleware, (req, res) => {
         const id = Number(req.params.id);
 
         const resource = getResource(resourceName) || [];
@@ -78,7 +78,7 @@ module.exports = {
 
     // Delete
     if (skips.includes('DELETE') === false) {
-      app.delete(`${config.path}/:id`, (req, res) => {
+      app.delete(`${config.path}/:id`, middleware, (req, res) => {
         const id = Number(req.params.id);
 
         let resource = getResource(resourceName) || [];

@@ -76,16 +76,16 @@ if (!api.length) {
 
 api.forEach(config => {
   // Add the API delay, if it is provided
-  if (config.delay) {
-    app.use(config.path, getDelayMiddleware(config.delay));
-  }
+  const middleware = config.delay
+    ? getDelayMiddleware(config.delay)
+    : (_, __, next) => next();
 
   if (config.method === 'resource') {
     // ReST resource
     configureResource(app, config);
   } else {
     // Custom endpoint
-    app[config.method](config.path, config.callback);
+    app[config.method](config.path, middleware, config.callback);
   }
 });
 

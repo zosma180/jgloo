@@ -1,3 +1,13 @@
+<a name="1.8.1"></a>
+
+## [1.8.1](https://github.com/zosma180/jgloo/compare/1.8.0...1.8.1) (2022-08-03)
+
+### Fixes
+
+- Fixed the "delay" option that was applied incorrectly
+
+---
+
 <a name="1.8.0"></a>
 
 ## [1.8.0](https://github.com/zosma180/jgloo/compare/1.7.0...1.8.0) (2022-07-29)
@@ -22,7 +32,7 @@
 
 ## [1.6.1](https://github.com/zosma180/jgloo/compare/1.6.0...1.6.1) (2022-07-22)
 
-### Bug Fixes
+### Fixes
 
 - Updated the package-lock to fix the security issues
 
@@ -42,7 +52,7 @@
 
 ## [1.5.2](https://github.com/zosma180/jgloo/compare/1.5.1...1.5.2) (2021-02-21)
 
-### Bug Fixes
+### Fixes
 
 - Fixed the folder path with space characters
 
@@ -52,7 +62,7 @@
 
 ## [1.5.1](https://github.com/zosma180/jgloo/compare/1.5.0...1.5.1) (2021-02-17)
 
-### Bug Fixes
+### Fixes
 
 - Fixed the folder path for Windows environment
 
@@ -152,7 +162,7 @@
 
 ## [1.0.3](https://github.com/zosma180/jgloo/compare/1.0.2...1.0.3) (2019-12-18)
 
-### Bug Fixes
+### Fixes
 
 - Fixed child process remaining alive
 
@@ -172,7 +182,7 @@
 
 ## [1.0.1](https://github.com/zosma180/jgloo/compare/1.0.0...1.0.1) (2019-12-16)
 
-### Bug Fixes
+### Fixes
 
 - Fixed nodemon path
 

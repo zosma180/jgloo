@@ -24,7 +24,7 @@ module.exports = {
 
   getDelayMiddleware: (delay) => {
     return (_, __, next) => {
-      setTimeout(() => next(), delay * 1000);
+      setTimeout(next, delay * 1000);
     };
   },
 }
