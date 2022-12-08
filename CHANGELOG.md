@@ -1,3 +1,13 @@
+<a name="1.8.2"></a>
+
+## [1.8.2](https://github.com/zosma180/jgloo/compare/1.8.1...1.8.2) (2022-12-08)
+
+### Fixes
+
+- Updated the package-lock to fix the security issues
+
+---
+
 <a name="1.8.1"></a>
 
 ## [1.8.1](https://github.com/zosma180/jgloo/compare/1.8.0...1.8.1) (2022-08-03)
