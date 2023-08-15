@@ -1,3 +1,14 @@
+<a name="1.9.0"></a>
+
+## [1.9.0](https://github.com/zosma180/jgloo/compare/1.8.2...1.9.0) (2023-08-15)
+
+### Features
+
+- Upgraded to nodemon v3
+- Minor code improvements
+
+---
+
 <a name="1.8.2"></a>
 
 ## [1.8.2](https://github.com/zosma180/jgloo/compare/1.8.1...1.8.2) (2022-12-08)

@@ -1,15 +1,15 @@
-const path = require('path');
+const { join } = require('path');
 const { existsSync, readdirSync, lstatSync } = require('fs');
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const multer = require('multer');
 
-const { configureResource } = require(path.join(__dirname, 'rest'));
-const { getDelayMiddleware } = require(path.join(__dirname, 'jgloo'));
+const { configureResource } = require(join(__dirname, 'rest'));
+const { getDelayMiddleware } = require(join(__dirname, 'jgloo'));
 const app = express();
 const params = process.argv.slice(2);
-const root = params[0];
+const root = join(process.cwd(), params[0]);
 const port = params[1];
 const staticUrl = params[2];
 
@@ -18,7 +18,12 @@ const middlewarePath = `${root}/middlewares`;
 const staticPath = `${root}/static`;
 
 if (!existsSync(root)) {
-  console.error(`The root folder "${root}" doen't exists.`);
+  console.error(`The root folder "${root}" doesn't exist.`);
+  process.exit(2);
+}
+
+if (!port) {
+  console.error(`You must provide the port parameter.`);
   process.exit(2);
 }
 
@@ -28,7 +33,7 @@ const walk = (entry, level = 1) => {
   const items = readdirSync(entry);
 
   items.forEach(item => {
-    const subEntry = path.join(entry, item);
+    const subEntry = join(entry, item);
 
     lstatSync(subEntry).isDirectory() && level < 10
       ? list = list.concat(walk(subEntry, level + 1))
