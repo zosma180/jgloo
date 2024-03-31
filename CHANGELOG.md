@@ -1,11 +1,19 @@
-<a name="1.9.0"></a>
+<a name="1.9.1"></a>
+
+## [1.9.1](https://github.com/zosma180/jgloo/compare/1.9.0...1.9.1) (2024-03-30)
+
+### Fixes
+
+- Updated the package-lock to fix the security issues.
+
+---
 
 ## [1.9.0](https://github.com/zosma180/jgloo/compare/1.8.2...1.9.0) (2023-08-15)
 
 ### Features
 
-- Upgraded to nodemon v3
-- Minor code improvements
+- Upgraded to nodemon v3.
+- Minor code improvements.
 
 ---
 
@@ -15,7 +23,7 @@
 
 ### Fixes
 
-- Updated the package-lock to fix the security issues
+- Updated the package-lock to fix the security issues.
 
 ---
 
@@ -25,7 +33,7 @@
 
 ### Fixes
 
-- Fixed the "delay" option that was applied incorrectly
+- Fixed the "delay" option that was applied incorrectly.
 
 ---
 
@@ -35,7 +43,7 @@
 
 ### Features
 
-- Added the optional "priority" property to the configuration
+- Added the optional "priority" property to the configuration.
 
 ---
 
@@ -45,7 +53,7 @@
 
 ### Features
 
-- Added the support for the recursive folder loading (api and middlewares)
+- Added the support for the recursive folder loading (api and middlewares).
 
 ---
 
@@ -55,7 +63,7 @@
 
 ### Fixes
 
-- Updated the package-lock to fix the security issues
+- Updated the package-lock to fix the security issues.
 
 ---
 
@@ -65,7 +73,7 @@
 
 ### Features
 
-- Added the optional "delay" property to the configuration
+- Added the optional "delay" property to the configuration.
 
 ---
 
@@ -75,7 +83,7 @@
 
 ### Fixes
 
-- Fixed the folder path with space characters
+- Fixed the folder path with space characters.
 
 ---
 
@@ -85,7 +93,7 @@
 
 ### Fixes
 
-- Fixed the folder path for Windows environment
+- Fixed the folder path for Windows environment.
 
 ---
 
@@ -95,7 +103,7 @@
 
 ### Features
 
-- Added the optional "not" property to the default ReST API configuration
+- Added the optional "not" property to the default ReST API configuration.
 
 ---
 
@@ -105,7 +113,7 @@
 
 ### Features
 
-- Added the optional parameter to customize the static url
+- Added the optional parameter to customize the static url.
 
 ---
 
@@ -115,7 +123,7 @@
 
 ### Features
 
-- Added the multipart/form-data support to apis
+- Added the multipart/form-data support to apis.
 
 ---
 
@@ -125,7 +133,7 @@
 
 ### Improvements
 
-- Updated the README with the right installation command
+- Updated the README with the right installation command.
 
 ---
 
@@ -135,7 +143,7 @@
 
 ### Improvements
 
-- Rebuilded the project after the security patch of the dependencies
+- Rebuilded the project after the security patch of the dependencies.
 
 ---
 
@@ -145,7 +153,7 @@
 
 ### Improvements
 
-- Bumpeded minimist from 1.2.0 to 1.2.2 for a security patch
+- Bumpeded minimist from 1.2.0 to 1.2.2 for a security patch.
 
 ---
 
@@ -155,7 +163,7 @@
 
 ### Features
 
-- Added the static folder feature
+- Added the static folder feature.
 
 ---
 
@@ -165,7 +173,7 @@
 
 ### Improvements
 
-- Added the json DB to nodemon watch exclusion
+- Added the json DB to nodemon watch exclusion.
 
 ---
 
@@ -175,7 +183,7 @@
 
 ### Improvements
 
-- Updated and improved CLI arguments
+- Updated and improved CLI arguments.
 
 ---
 
@@ -185,7 +193,7 @@
 
 ### Fixes
 
-- Fixed child process remaining alive
+- Fixed child process remaining alive.
 
 ---
 
@@ -195,7 +203,7 @@
 
 ### Improvements
 
-- Updated the docs on the README
+- Updated the docs on the README.
 
 ---
 
@@ -205,7 +213,7 @@
 
 ### Fixes
 
-- Fixed nodemon path
+- Fixed nodemon path.
 
 ---
 
@@ -215,4 +223,4 @@
 
 ### Features
 
-- Released project
+- Released project.

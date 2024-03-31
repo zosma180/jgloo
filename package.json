@@ -23,7 +23,7 @@
     "http",
     "rest"
   ],
-  "author": "zosma",
+  "author": "Luca Morello",
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.19.0",
