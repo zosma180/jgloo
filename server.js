@@ -51,7 +51,7 @@ app.use(multer({ dest: staticPath }).any());
 // Add middlewares
 if (existsSync(middlewarePath)) {
   walk(middlewarePath)
-    .filter(file => file.endsWith('.js'))
+    .filter(file => file.endsWith('js'))
     .forEach(file => {
       const middleware = require(file);
       app.use(middleware);
@@ -70,7 +70,7 @@ if (!existsSync(apiPath)) {
 }
 
 const api = walk(apiPath)
-  .filter(file => file.endsWith('.js'))
+  .filter(file => file.endsWith('js'))
   .map(file => require(file))
   .sort((a, b) => (b.priority || 0) - (a.priority || 0));
 
