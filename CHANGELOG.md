@@ -1,11 +1,19 @@
-<a name="1.9.2"></a>
+<a name="1.9.3"></a>
 
-## [1.9.2](https://github.com/zosma180/jgloo/compare/1.9.1...1.9.2) (2024-09-14)
+## [1.9.3](https://github.com/zosma180/jgloo/compare/1.9.1...1.9.3) (2024-09-14)
 
 ### Fixes
 
 - fixed the api detection with "cjs" and "mjs" extensions.
 - Updated the package-lock to fix the security issues.
+
+---
+
+<a name="1.9.2"></a>
+
+## 1.9.2 (Not Available)
+
+Version skipped due to publishing issues.
 
 ---
 
