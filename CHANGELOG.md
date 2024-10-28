@@ -1,3 +1,13 @@
+<a name="1.9.4"></a>
+
+## [1.9.4](https://github.com/zosma180/jgloo/compare/1.9.3...1.9.4) (2024-03-30)
+
+### Fixes
+
+- Updated the package-lock to fix the security issues.
+
+---
+
 <a name="1.9.3"></a>
 
 ## [1.9.3](https://github.com/zosma180/jgloo/compare/1.9.1...1.9.3) (2024-09-14)
