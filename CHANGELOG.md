@@ -1,3 +1,15 @@
+<a name="2.0.0"></a>
+
+## [2.0.0](https://github.com/zosma180/jgloo/compare/1.9.4...2.0.0) (2024-12-11)
+
+### Features
+
+- Converted the codebase to ES module style.
+
+**WARNING**: starting from this version, the CommonJS api are nomore supported.
+
+---
+
 <a name="1.9.4"></a>
 
 ## [1.9.4](https://github.com/zosma180/jgloo/compare/1.9.3...1.9.4) (2024-03-30)

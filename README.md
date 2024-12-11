@@ -56,7 +56,7 @@ Now you are ready to [create your first API](#create-a-simple-api).
 To setup your first API create a new file "hello.js" in the "api" folder. The name of the file does not matter. Then insert the following snippet:
 
 ```javascript
-module.exports = {
+export default {
   path: '/hello',
   method: 'get',
   callback: (req, res) => {
@@ -75,7 +75,7 @@ You are ready to [run the server](#run-the-server) now.
 To setup a ReST API, you have to create a new file in the "api" folder with the name you prefer and the following snippet:
 
 ```javascript
-module.exports = {
+export default {
   path: '/user',
   method: 'resource',
 };
@@ -93,7 +93,7 @@ With these few rows of code will be created 6 routes:
 If you want to skip any of the previous routes, you can add the "not" property:
 
 ```javascript
-module.exports = {
+export default {
   path: '/user',
   method: 'resource',
   not: ['LIST']
@@ -109,9 +109,9 @@ If you need to control the logic of your resources, you can create a custom API 
 To achieve it create a new file in the "api" folder with the name you prefer and the following snippet:
 
 ```javascript
-const { getResource, setResource } = require('jgloo');
+import { getResource, setResource } from 'jgloo';
 
-module.exports = {
+export default {
   path: '/user',
   method: 'post',
   callback: (req, res) => {
@@ -142,7 +142,7 @@ To add a middleware, you have to create a folder "middlewares" in your chosen ro
 Then create a new file inside with the name you prefer and the following sample snippet:
 
 ```javascript
-module.exports = (req, res, next) => {
+export default function(req, res, next) {
   const isAuthorized = req.get('Authorization') === 'my-token';
   isAuthorized ? next() : res.sendStatus(401);
 };
@@ -159,7 +159,7 @@ The [default ReST API](#create-a-default-rest-api) store the JSON file with the 
 If you want to specify the file name of the resources, you can set it as the "name" property of the API:
 
 ```javascript
-module.exports = {
+export default {
   path: '/my/long/path',
   method: 'resource',
   name: 'user',
@@ -190,7 +190,7 @@ It's recommended to add the `static` folder in the `.gitignore` file.
 If you want to simulate a network delay, you can add the `delay` property to your API configuration:
 
 ```javascript
-module.exports = {
+export default {
   ...
   delay: 3 // Seconds
 };
@@ -207,7 +207,7 @@ If you have a scenario where two or more paths have conflicting values, e.g.:
 you can add the `priority` property to your API configuration:
 
 ```javascript
-module.exports = {
+export default {
   ...
   priority: 2
 };

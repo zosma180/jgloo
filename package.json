@@ -7,13 +7,13 @@
     "type": "git",
     "url": "git+https://github.com/zosma180/jgloo.git"
   },
-  "main": "jgloo.js",
+  "main": "jgloo.mjs",
   "scripts": {
-    "start": "./cli",
+    "start": "node cli.mjs",
     "deploy": "npm-deploy . ."
   },
   "bin": {
-    "jgloo": "cli"
+    "jgloo": "cli.mjs"
   },
   "keywords": [
     "jgloo",

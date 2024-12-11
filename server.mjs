@@ -1,12 +1,12 @@
-const { join } = require('path');
-const { existsSync, readdirSync, lstatSync } = require('fs');
-const express = require('express');
-const cors = require('cors');
-const bodyParser = require('body-parser');
-const multer = require('multer');
+import { join } from 'path';
+import { existsSync, readdirSync, lstatSync } from 'fs';
+import express from 'express';
+import cors from 'cors';
+import bodyParser from 'body-parser';
+import multer from 'multer';
+import { configureResource } from './rest.mjs';
+import { getDelayMiddleware } from './jgloo.mjs';
 
-const { configureResource } = require(join(__dirname, 'rest'));
-const { getDelayMiddleware } = require(join(__dirname, 'jgloo'));
 const app = express();
 const params = process.argv.slice(2);
 const root = join(process.cwd(), params[0]);
@@ -50,12 +50,12 @@ app.use(multer({ dest: staticPath }).any());
 
 // Add middlewares
 if (existsSync(middlewarePath)) {
-  walk(middlewarePath)
+  const middlewareQueue = walk(middlewarePath)
     .filter(file => file.endsWith('js'))
-    .forEach(file => {
-      const middleware = require(file);
-      app.use(middleware);
-    });
+    .map(file => import(file));
+
+  const middlewareFiles = await Promise.all(middlewareQueue);
+  middlewareFiles.forEach(m => app.use(m.default));
 }
 
 // Add the static folder
@@ -69,10 +69,12 @@ if (!existsSync(apiPath)) {
   process.exit(2);
 }
 
-const api = walk(apiPath)
+const apiQueue = walk(apiPath)
   .filter(file => file.endsWith('js'))
-  .map(file => require(file))
-  .sort((a, b) => (b.priority || 0) - (a.priority || 0));
+  .map(file => import(file));
+
+  const apiFiles = await Promise.all(apiQueue);
+const api = apiFiles.map(f => f.default).sort((a, b) => (b.priority || 0) - (a.priority || 0));
 
 if (!api.length) {
   console.error(`No API file defined. Create one.`);
@@ -87,7 +89,7 @@ api.forEach(config => {
 
   if (config.method === 'resource') {
     // ReST resource
-    configureResource(app, config);
+    configureResource(app, config, middleware);
   } else {
     // Custom endpoint
     app[config.method](config.path, middleware, config.callback);
