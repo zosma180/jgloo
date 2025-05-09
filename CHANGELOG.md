@@ -1,3 +1,13 @@
+<a name="2.0.1"></a>
+
+## [2.0.1](https://github.com/zosma180/jgloo/compare/2.0.0...2.0.1) (2025-05-09)
+
+### Fixes
+
+- Fixed the internal module imports on Windows.
+
+---
+
 <a name="2.0.0"></a>
 
 ## [2.0.0](https://github.com/zosma180/jgloo/compare/1.9.4...2.0.0) (2024-12-11)

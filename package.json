@@ -10,7 +10,7 @@
   "main": "jgloo.mjs",
   "scripts": {
     "start": "node cli.mjs",
-    "deploy": "npm-deploy . ."
+    "deploy": "npm-deploy.mjs . ."
   },
   "bin": {
     "jgloo": "cli.mjs"

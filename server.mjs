@@ -13,9 +13,9 @@ const root = join(process.cwd(), params[0]);
 const port = params[1];
 const staticUrl = params[2];
 
-const apiPath = `${root}/api`;
-const middlewarePath = `${root}/middlewares`;
-const staticPath = `${root}/static`;
+const apiPath = join(root, 'api');
+const middlewarePath = join(root, 'middlewares');
+const staticPath = join(root, 'static');
 
 if (!existsSync(root)) {
   console.error(`The root folder "${root}" doesn't exist.`);
@@ -52,7 +52,7 @@ app.use(multer({ dest: staticPath }).any());
 if (existsSync(middlewarePath)) {
   const middlewareQueue = walk(middlewarePath)
     .filter(file => file.endsWith('js'))
-    .map(file => import(file));
+    .map(file => import(`file://${file}`));
 
   const middlewareFiles = await Promise.all(middlewareQueue);
   middlewareFiles.forEach(m => app.use(m.default));
@@ -71,7 +71,7 @@ if (!existsSync(apiPath)) {
 
 const apiQueue = walk(apiPath)
   .filter(file => file.endsWith('js'))
-  .map(file => import(file));
+  .map(file => import(`file://${file}`));
 
   const apiFiles = await Promise.all(apiQueue);
 const api = apiFiles.map(f => f.default).sort((a, b) => (b.priority || 0) - (a.priority || 0));
