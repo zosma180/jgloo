@@ -1,3 +1,13 @@
+<a name="2.1.0"></a>
+
+## [1.9.4](https://github.com/zosma180/jgloo/compare/2.0.1...2.1.0) (2025-06-11)
+
+### Fixes
+
+- Updated multer to version 2.
+
+---
+
 <a name="2.0.1"></a>
 
 ## [2.0.1](https://github.com/zosma180/jgloo/compare/2.0.0...2.0.1) (2025-05-09)
