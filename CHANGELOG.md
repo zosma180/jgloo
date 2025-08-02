@@ -1,6 +1,16 @@
+<a name="2.1.1"></a>
+
+## [2.1.1](https://github.com/zosma180/jgloo/compare/2.1.0...2.1.1) (2025-08-02)
+
+### Fixes
+
+- Security update of August 2025.
+
+---
+
 <a name="2.1.0"></a>
 
-## [1.9.4](https://github.com/zosma180/jgloo/compare/2.0.1...2.1.0) (2025-06-11)
+## [2.1.0](https://github.com/zosma180/jgloo/compare/2.0.1...2.1.0) (2025-06-11)
 
 ### Fixes
 
