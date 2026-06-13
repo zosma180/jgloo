@@ -26,11 +26,11 @@
   "author": "Luca Morello",
   "license": "MIT",
   "dependencies": {
-    "body-parser": "^1.19.0",
-    "cors": "^2.8.5",
-    "express": "^4.17.1",
-    "minimist": "^1.2.5",
-    "multer": "^2.0.1",
-    "nodemon": "^3.0.1"
+    "body-parser": "^1.20.5",
+    "cors": "^2.8.6",
+    "express": "^4.22.2",
+    "minimist": "^1.2.8",
+    "multer": "^2.1.1",
+    "nodemon": "^3.1.14"
   }
 }
