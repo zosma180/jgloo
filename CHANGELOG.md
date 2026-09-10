@@ -1,3 +1,17 @@
+<a name="2.2.0"></a>
+
+## [2.2.0](https://github.com/zosma180/jgloo/compare/2.1.7...2.2.0) (2026-09-10)
+
+### Fixes
+
+- Security update of September 2026.
+
+### Features
+
+- Upgraded Express to v5.
+
+---
+
 <a name="2.1.7"></a>
 
 ## [2.1.7](https://github.com/zosma180/jgloo/compare/2.1.6...2.1.7) (2026-06-13)
